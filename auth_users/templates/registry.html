@@ -1,5 +1,48 @@
 {%extends 'bases/main_structure.html' %}
 
-{%block content%}
-<h1> </h1>
+{%block 'content'%}
+<h1>Register</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 sidebar">
+            <div class="logo_sidebar">
+                <h2 class="logo">
+                    <img class="img_logo_sidebar" src="">
+                </h2>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="area_cadastrar">
+                
+                <h2 class="titulo">Welcome!</h2>
+                <p class="sub-titulo">Registry your account</p>
+                <hr>
+                <form action="{% url 'registry' %}" method="POST"> 
+                    <span class="bold">Username</span>
+                    <input class="form-control input-form" name="usuario" type="text" placeholder="Digite seu nome...">
+                    <br>
+                    <span class="bold">E-mail</span>
+                    <input class="form-control input-form" name="email" type="text" placeholder="Digite seu E-mail...">
+                    <br>
+                    <div class="row">
+                        <div class="col-md">
+                            <span class="bold">Password</span>
+                            <input class="form-control input-form" name="senha" type="password" placeholder="Digite sua senha...">
+                        </div>
+
+                        <div class="col-md">
+                            <span class="bold">Confirm your password</span>
+                            <input class="form-control input-form" name="confirmar_senha" type="password" placeholder="Confirme sua senha...">
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn-first">Registry</button>
+                </form>
+                <h3 style="position: absolute; bottom: 5l5px; font-weight: bold">Already have an account?&nbsp <a href="" class="btn btn-outline-success btn-lg">Login</a> </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
 {%endblock%}

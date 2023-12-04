@@ -1,0 +1,43 @@
+:root{
+    --main-color: #151C34;
+    --darkmode-color: #0C121C;
+    --light-color: #6DE6EE;
+    --contrast-color: #f4c96b;
+    --only-unique-color: #066668;
+    --white-color: #fff;
+    --input-color-default: #281D1F;
+}
+
+*{
+    color: var(--white-color);
+}
+
+.emphasis-font{
+    color: var(--light-color);
+    font-size: 2.5em;
+}
+
+.input-default{
+    background-color: var(--input-color-default);
+    border: 1px solid var(--only-unique-color);
+    padding: 0.5em;
+    width: 50%;
+}
+
+.default-width{
+    width: 100%;
+}
+
+.button-default{
+    background-color: var(--light-color);
+    color: var(--input-color-default);
+    width: 15%;
+    padding: 0.625em;
+    border: none;
+    border-radius: 10px;
+}
+
+.emphasis-font-secondary{
+    color: var(--light-color);
+    font-size: 2.25em;
+}
