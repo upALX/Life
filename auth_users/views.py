@@ -4,4 +4,4 @@ import json
 
 # Create your views here.
 def registry(request: json) -> HttpResponse:
-    return HttpResponse('Hello world!')
+    return render(request, 'registry.html')
