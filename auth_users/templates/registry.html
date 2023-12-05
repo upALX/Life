@@ -2,7 +2,7 @@
 {%load static%}
 
 {%block 'head'%}
-<link rel="stylesheet" href="{%static 'users/css/users-style.css'%}">
+<link rel="stylesheet" href="{%static 'users/css/users_style.css'%}">
 {%endblock 'head'%}
 
 {%block 'content'%}
@@ -27,22 +27,28 @@
                 <h2 class="titulo">Welcome!</h2>
                 <p class="sub-titulo">Registry your account</p>
                 <hr>
-                <form action="{% url 'registry' %}" method="POST"> {% csrf_token %} 
+                <form action="{% url 'registry' %}" method="POST"> {% csrf_token %}
+                    <span class="bold">First name</span>
+                    <input class="form-control input-form" name="f_name" type="text" placeholder="Your first name..." required>
+                    <br>
+                    <span class="bold">Last name</span>
+                    <input class="form-control input-form" name="l_name" type="text" placeholder="Your last name..."> 
+                    <br>
                     <span class="bold">Username</span>
-                    <input class="form-control input-form" name="username" type="text" placeholder="Digite seu nome..." required>
+                    <input class="form-control input-form" name="username" type="text" placeholder="Your nickname..." required>
                     <br>
                     <span class="bold">E-mail</span>
-                    <input class="form-control input-form" name="email" type="text" placeholder="Digite seu E-mail...">
+                    <input class="form-control input-form" name="email" type="text" placeholder="Your email E-mail...">
                     <br>
                     <div class="row">
                         <div class="col-md">
                             <span class="bold">Password</span>
-                            <input class="form-control input-form" name="password" type="password" placeholder="Digite sua senha... " required>
+                            <input class="form-control input-form" name="password" type="password" placeholder="Your password... " required>
                         </div>
 
                         <div class="col-md">
                             <span class="bold">Confirm your password</span>
-                            <input class="form-control input-form" name="c-password" type="password" placeholder="Confirme sua senha..." required>
+                            <input class="form-control input-form" name="c-password" type="password" placeholder="Confirm your password..." required>
                         </div>
                     </div>
                     <br>

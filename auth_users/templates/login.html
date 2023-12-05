@@ -3,12 +3,13 @@
 {%load static%}
 
 {%block 'head'%}
-    <link rel="stylesheet" href="{%static 'users/css/users-styles.css'%}">
-{%endblock%}
+<link rel="stylesheet" href="{%static 'users/css/users_style.css'%}">
+<link rel="stylesheet" href="{%static 'users/css/login.css'%}">
+{%endblock 'head'%}
 
 {%block 'content'%}
 
-    <div class="container">
+    <div class="content">
         <h3 class="emphasis-font-secondary"><img width='10%' src="{%static 'general/assets/'%}" alt=""></h3>
 
         {%if messages%}
@@ -17,7 +18,7 @@
             {%endfor%}
         {%endif%}
 
-        <div>
+        <div class="login-card">
             <form action="{%url 'login'%}" method="POST">
                 {% csrf_token %}
                 <label for="">Username</label>
