@@ -1,0 +1,7 @@
+body{
+    background-color: var(--main-color);
+}
+
+p{
+    color: var(--light-color);
+}

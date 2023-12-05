@@ -1,8 +1,18 @@
 {%extends 'bases/main_structure.html' %}
+{%load static%}
+
+{%block 'head'%}
+<link rel="stylesheet" href="{%static 'users/css/users-style.css'%}">
+{%endblock 'head'%}
 
 {%block 'content'%}
-<h1>Register</h1>
 <div class="container-fluid">
+    {%if messages %}
+        {% for message in messages%}
+            <div class="alert {{message.tags}}">{{message}}</div>
+        {%endfor%}
+    {%endif%}
+    <h2 class="emphasis-font">Register</h2>
     <div class="row">
         <div class="col-md-3 sidebar">
             <div class="logo_sidebar">
@@ -11,16 +21,15 @@
                 </h2>
             </div>
         </div>
-
         <div class="col-md-9">
             <div class="area_cadastrar">
                 
                 <h2 class="titulo">Welcome!</h2>
                 <p class="sub-titulo">Registry your account</p>
                 <hr>
-                <form action="{% url 'registry' %}" method="POST"> 
+                <form action="{% url 'registry' %}" method="POST"> {% csrf_token %} 
                     <span class="bold">Username</span>
-                    <input class="form-control input-form" name="usuario" type="text" placeholder="Digite seu nome...">
+                    <input class="form-control input-form" name="username" type="text" placeholder="Digite seu nome..." required>
                     <br>
                     <span class="bold">E-mail</span>
                     <input class="form-control input-form" name="email" type="text" placeholder="Digite seu E-mail...">
@@ -28,18 +37,18 @@
                     <div class="row">
                         <div class="col-md">
                             <span class="bold">Password</span>
-                            <input class="form-control input-form" name="senha" type="password" placeholder="Digite sua senha...">
+                            <input class="form-control input-form" name="password" type="password" placeholder="Digite sua senha... " required>
                         </div>
 
                         <div class="col-md">
                             <span class="bold">Confirm your password</span>
-                            <input class="form-control input-form" name="confirmar_senha" type="password" placeholder="Confirme sua senha...">
+                            <input class="form-control input-form" name="c-password" type="password" placeholder="Confirme sua senha..." required>
                         </div>
                     </div>
                     <br>
-                    <button class="btn-first">Registry</button>
+                    <button class="button-default">Registry</button>
                 </form>
-                <h3 style="position: absolute; bottom: 5l5px; font-weight: bold">Already have an account?&nbsp <a href="" class="btn btn-outline-success btn-lg">Login</a> </h3>
+                <h3 style="position: absolute; bottom: 5l5px; font-weight: bold">Already have an account?&nbsp <a href="" class="button button-outline-success button-lg">Login</a> </h3>
             </div>
         </div>
     </div>
