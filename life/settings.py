@@ -118,8 +118,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = (path.join(BASE_DIR), 'templates/static')
+STATIC_ROOT = path.join(BASE_DIR, 'static')
+MEDIA_ROOT = path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MESSAGES
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.DEBUG: 'alert-primary',
+    constants.ERROR: 'alert-danger',
+    constants.WARNING: 'alert-warning',
+    constants.SUCCESS: 'alert-success',
+    constants.INFO: 'alert-info',
+}
