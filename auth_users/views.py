@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.messages import constants
 from django.contrib import messages
+from django.contrib.auth import au
 
 # Create your views here.
 def registry(request):
@@ -37,4 +38,10 @@ def registry(request):
                 messages.add_message(request, constants.ERROR, 'Internal error of system...')
                 return redirect('/users/registry/') 
 
-            
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    elif request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
