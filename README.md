@@ -18,7 +18,29 @@ Life is a webapp platform dedicated to manage laboratory exams and consultations
 
 ## How to use 🫁
 
-![giphy](https://github.com/upALX/All-Assets/blob/main/sla.webp)
+**requirements:**
+  - Python 3 
+
+If you has a Python 3 installed on your desktop, follow this:
+
+**1 - Clone this repo:**
+```
+git clone git@github.com:upALX/Life.git
+```
+**2 - Create a virtual environment** (*you must have virtualenv installed*)
+```
+virtualenv .venv --python=python3.11  
+```
+
+**3 - Install all dependencies:**
+```
+pip install -r requirements.txt requirements-dev.txt
+```
+
+**4 - Run the webapp:** (*in this case on the linux distro Ubuntu*)
+```
+python3 manage.py runserver
+```
 
 ## Make your mark :triangular_flag_on_post:      
 
