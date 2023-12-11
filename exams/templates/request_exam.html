@@ -1,0 +1,51 @@
+{% extends "bases/main_structure.html" %}
+{%load static%}
+
+{%block 'head'%}
+<link rel="stylesheet" href={%static 'exams/css/request_exams.css'%}>
+{%endblock 'head'%}
+
+{%block 'content'%}
+    <div class="content__exams">
+
+        <div class="content__select-exam">
+            <h1>Request exams</h1>
+            <h4>Select exams to perform</h4>
+            <form action="{%url 'request_exams'%}" method="post">{% csrf_token%}
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                
+                    <div class="btn-group" role="group">
+                        <select class="content__select-form-exams" name="exams_selected">
+                            <option selected>Open this select menu</option>
+                            {%for exam in exams_type%}
+                                
+                            {%endfor%}
+                            <option value="{{exam.id}}">{{exam.exam_name}}
+                          </select>
+                        {% comment %} <ul class="dropdown-menu">
+                            {% for exam in exams_type%}
+                                <li></option></li>
+                            {%endfor%}
+                        </ul> {% endcomment %}
+                        <textarea class="btn-group__textarea"id="w3review" name="w3review" rows="7" cols="50">
+                        a
+                        </textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Calculate exams value</button>
+                </div>
+            </form>
+        </div>
+        <div class="content__select-resum">
+            <div class="content__select-exam-prices">
+                <h3>Exam</h3>
+                <h3>R$ 70</h3>
+            </div>
+            <div class="content__selected-results">
+                <h3>Total</h3>
+                <h3>Date: </h3>
+            </div>
+            <button class="btn btn-primary" type="submit">Order</button>
+        </div>
+        
+    </div>
+{%endblock%}

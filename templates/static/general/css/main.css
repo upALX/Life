@@ -1,18 +1,21 @@
 :root{
     --main-color: #080f1a;
-    --secondary-color: #0d4e6d;
+    --secondary-color: #4297be;
     --middle-color: #098ab5;
     --secondary-contrast-color: #07d2ff;
-    --main-contrast-color: #0ffff8
-    --darkmode-color: #0C121C;
+    --main-contrast-color: #0ffff8;
+    --dark-mode-color: #0C121C;
     --light-color: #6DE6EE;
     --contrast-color: #f4c96b;
-    --only-unique-color: #066668;
+    --only-unique-color: #27fca3;
     --white-color: #fff;
     --input-color-default: #281D1F;
 }
 
 *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     color: var(--white-color);
 }
 
