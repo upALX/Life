@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--main-color);
+}
+
+div.content__exams{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    width: 900px;
+}
+
+button.btn{
+    background-color: var(--middle-color);
+}
+
+ul.dropdown-menu{
+    background-color: var(--middle-color);
+}
+
+textarea.btn-group__textarea{
+    border: 1px dashed var(--secondary-color);
+    background-color: var(--main-color);
+    resize: none;
+}
+
+div.content__select-resum{
+    padding: 1.5em;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--only-unique-color);
+}
+
+div.content__select-exam-prices{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--main-color);
+}
