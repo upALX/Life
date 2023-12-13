@@ -13,19 +13,21 @@ def request_exams(request):
     if request.method == 'GET':
         return render(request=request, template_name='request_exam.html', context={'exams_type': exams_type})
     elif request.method == 'POST':
-        exams_id = request.POST.getlists('exams_name')
+        exams_id = request.POST.getlist('exams_selected')
 
-        order_exams = Exams.objects.filter(
-            id__in=exams_id
-        )
+        print(exams_id)
 
-        total_amount_exam = sum([exam.price for exam in order_exams])
-        # TODO calculate price of data right
+        return HttpResponse('Hello world')
 
-        return render(
-            request=request, template_name='request_exam.html',
-            context={'exams_type': exams_type, 'order_exams': order_exams,
-            'total_amount': total_amount_exam}
-        )
+        # order_exams = Exams.objects.filter(
+        #     id__in=exams_id
+        # )
 
-    return HttpResponse('Hello world')
+        # total_amount_exam = sum([exam.price for exam in order_exams])
+        # # TODO calculate price of data right
+
+        # return render(
+        #     request=request, template_name='request_exam.html',
+        #     context={'exams_type': exams_type, 'order_exams': order_exams,
+        #     'total_amount': total_amount_exam}
+        # )
