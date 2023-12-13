@@ -3,6 +3,77 @@
 }
 body{
     background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-main {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.select-box {
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.options-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+}
+
+.option {
+    padding: 10px;
+    color: var(--main-color);
+    cursor: pointer;
+    background-color: var(--middle-color)
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 80%;
+    margin: 0.6em 0;
+    resize: none;
+}
+
+span.button-span {
+    width: 150px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: var(--middle-color);
+    border: 1px solid var(--white-color);
+}
+
+span.button-span:hover{
+    opacity: 0.9;
 }
 
 div.content__exams{
@@ -13,17 +84,43 @@ div.content__exams{
 }
 
 button.btn{
-    background-color: var(--middle-color);
+    background-color: var(--secondary-color);
 }
 
 ul.dropdown-menu{
     background-color: var(--middle-color);
 }
 
+.content__select-form-exams{
+    padding: 5px;
+    width: 70%;
+}
+
 textarea.btn-group__textarea{
     border: 1px dashed var(--secondary-color);
     background-color: var(--main-color);
     resize: none;
+    width: 70%;
+    margin: 5% 0;
+}
+
+select.content__select-form-exams{
+    background-color: black;
+}
+
+option.content__select-options{
+    background-color: black;
+}
+
+input.content__select_input-submit{
+    padding: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    border: 1px solid var(--white-color);
+}
+
+input.content__select_input-submit:hover{
+    opacity: 0.8;
 }
 
 div.content__select-resum{
@@ -32,8 +129,8 @@ div.content__select-resum{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    background-color: var(--only-unique-color);
+    height: 80%;
+    background-color: var(--middle-color);
 }
 
 div.content__select-exam-prices{
