@@ -38,8 +38,6 @@ virtualenv .venv --python=python3.11
 pip install -r requirements.txt requirements-dev.txt
 ```
 
----
-
 **4 - Run the webapp:** (*in this case on the linux distro Ubuntu*)
 
 ```
