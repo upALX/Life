@@ -33,6 +33,7 @@ virtualenv .venv --python=python3.11
 ```
 
 **3 - Install all dependencies:**
+
 ```
 pip install -r requirements.txt requirements-dev.txt
 ```
