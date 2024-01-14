@@ -42,7 +42,7 @@ pip install -r requirements.txt requirements-dev.txt
 python3 manage.py runserver
 ```
 
-## Make your mark :triangular_flag_on_post:      
+## Make your mark :triangular_flag_on_post:   
 
 **If you have any problems with this app or have an idea that contributes, open a [issue](https://github.com/upALX/Life/issues), [pull request](https://github.com/upALX/Life/pulls) or find me on [Linkedin](https://www.linkedin.com/in/alxinc/). Don't forget to give the project a star 🌟 :D**
 
