@@ -10,6 +10,7 @@ Life is a webapp platform dedicated to manage laboratory exams and consultations
 
 ---
 
+
 ## Tech stack
 ![python](https://img.shields.io/badge/-Python-05122A?style=flat&logo=python)&nbsp;
 ![SQLAlchemy](https://img.shields.io/badge/-django-05122A?style=flat&logo=SQLAlchemy)&nbsp;
