@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.contrib.auth.decorators import login_required
 from .models import Exams
+from decimal import Decimal
 
 # Create your views here.
 @login_required
@@ -17,17 +18,20 @@ def request_exams(request):
 
         print(exams_id)
 
-        return HttpResponse('Hello world')
+        order_exams = Exams.objects.filter(
+            id__in=exams_id
+        )
 
-        # order_exams = Exams.objects.filter(
-        #     id__in=exams_id
-        # )
+        print(order_exams)
 
-        # total_amount_exam = sum([exam.price for exam in order_exams])
-        # # TODO calculate price of data right
+        exams_price = sum([exam.exam_price for exam in order_exams])
+        
+        total_amount_exams = f'{Decimal(round(exams_price, 2)):.2f}'
 
-        # return render(
-        #     request=request, template_name='request_exam.html',
-        #     context={'exams_type': exams_type, 'order_exams': order_exams,
-        #     'total_amount': total_amount_exam}
-        # )
+        # # TODO calculate price of data disponiveis
+
+        return render(
+            request=request, template_name='request_exam.html',
+            context={'exams_type': exams_type, 'order_exams': order_exams,
+            'total_amount': total_amount_exams}
+        )

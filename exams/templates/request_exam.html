@@ -10,28 +10,6 @@
 
         <div class="content__select-exam">
             <h1>Request exams</h1>
-            {% comment %} <form action="{%url 'request_exams'%}" method="post">{% csrf_token%}
-                <div class="content__select" >
-                    <h4>Select exams to perform</h4>
-                    <div class="content__select-card">
-                        <select class="content__select-form-exams" name="exams_selected">
-                            <option class="content__select-options" selected>Open this select menu</option>
-                            {%for exam in exams_type%}
-                                <option class="content__select-options" value="">LOL1</option>
-                            {%endfor%}
-                          </select>
-                          <input type="submit" class="content__select_input-submit" value="Select values"> {% endcomment %}
-                        {% comment %} <ul class="dropdown-menu">
-                            {% for exam in exams_type%}
-                                <li></option></li>
-                            {%endfor%}
-                        </ul> {% endcomment %}
-                        {% comment %} <textarea onclick="getAllSelectedValues()" class="btn-group__textarea"id="" name="" rows="7" cols="50">
-                        </textarea>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Calculate exams value</button>
-                </div>
-            </form> {% endcomment %}
             <form action="{%url 'request_exams'%}" method="POST" > {%csrf_token%}
             <div class="container-main">
                 <div id="custom-select-container" class="custom-select">
@@ -42,7 +20,7 @@
                     <div class="options-container" id="options-container">
                         {%for exam in exams_type%}
                         <div class="option">
-                            <input type="checkbox" class="checkbox" id="{{exam.exam_name}}" value="{{exam.exam_name}}" name="exams_selected" multiple> {{exam.exam_name}}
+                            <input type="checkbox" class="checkbox" value="{{exam.id}}" id="checkbox_checked" name="exams_selected" multiple> {{exam.exam_name}}
                         </div>
                         {%endfor%}
                     </div>
@@ -54,12 +32,17 @@
         </div>
         <div class="content__select-resum">
             <div class="content__select-exam-prices">
-                <h3>Exam</h3>
-                <h3>R$ 70</h3>
+                {%for exam in exams_type%}
+                <div class="content__selected-exam-information">
+                    <h3>{{exam.exam_name}}</h3> <h3>{{exam.exam_price}}</h3>
+                </div>
+                {%endfor%}
             </div>
             <div class="content__selected-results">
-                <h3>Total</h3>
-                <h3>Date: </h3>
+                <div class="content__select_price">
+                    <h3>Total: </h3> <h3>{{total_amount}}</h3>
+                    <h3>Date: </h3>
+                </div>
             </div>
             <button class="btn btn-primary" type="submit">Order</button>
         </div>

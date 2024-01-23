@@ -124,17 +124,20 @@ input.content__select_input-submit:hover{
 }
 
 div.content__select-resum{
-    padding: 1.5em;
+    padding: 1em;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 80%;
     background-color: var(--middle-color);
 }
 
 div.content__select-exam-prices{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     border-bottom: 1px dashed var(--main-color);
+}
+div.content__selected-exam-information, .content__selected-results{
+    display: flex;
+    justify-content: space-between;
 }
